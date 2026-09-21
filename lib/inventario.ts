@@ -1,0 +1,11 @@
+export type PrecioInmueble={operacion:'venta'|'renta';precio:string;moneda:'MXN'|'USD'};
+export type EventoInmueble={id:string;tipo:string;texto:string;creado_en:string};
+export type DatosInmueble={titulo:string;clave_interna:string|null;tipo:string;subtipo:string;colonia:string;municipio:string;estado:string;calle:string;cp:string;m2_terreno:string|null;m2_construccion:string|null;recamaras:number|null;banos:string|null;estacionamientos:number|null;descripcion:string;operaciones:PrecioInmueble[]};
+export type Inmueble=DatosInmueble&{id:string;estatus:string;archivado_en:string|null;actualizado_en:string;puede_editar:boolean;disponible_para_ofrecer:boolean;historial?:EventoInmueble[];foto_demo?:string};
+const base={subtipo:'',calle:'',cp:'',descripcion:'Inmueble ficticio para explorar el inventario.',archivado_en:null,actualizado_en:'2026-09-18T12:00:00Z',puede_editar:true,disponible_para_ofrecer:true,historial:[]};
+export const inmueblesDemo:Inmueble[]=[
+ {...base,id:'inmueble-1',titulo:'Casa del Encino',clave_interna:'DEMO-001',tipo:'casa',estatus:'disponible',colonia:'Altozano',municipio:'Morelia',estado:'Michoacán',m2_terreno:'200',m2_construccion:'245.50',recamaras:3,banos:'3.5',estacionamientos:2,operaciones:[{operacion:'venta',precio:'3850000',moneda:'MXN'},{operacion:'renta',precio:'22000',moneda:'MXN'}],foto_demo:'/casa-demo.webp'},
+ {...base,id:'inmueble-2',titulo:'Departamento en Tres Marías',clave_interna:'DEMO-002',tipo:'departamento',estatus:'reservada',disponible_para_ofrecer:false,colonia:'Tres Marías',municipio:'Morelia',estado:'Michoacán',m2_terreno:null,m2_construccion:'118.75',recamaras:2,banos:'2',estacionamientos:2,operaciones:[{operacion:'venta',precio:'2450000',moneda:'MXN'}]},
+ {...base,id:'inmueble-3',titulo:'Terreno en Jesús del Monte',clave_interna:'DEMO-003',tipo:'terreno',estatus:'disponible',colonia:'Jesús del Monte',municipio:'Morelia',estado:'Michoacán',m2_terreno:'450.25',m2_construccion:null,recamaras:null,banos:null,estacionamientos:null,operaciones:[{operacion:'venta',precio:'1800000',moneda:'MXN'}]}
+];
+export const precioTexto=(o:PrecioInmueble)=>new Intl.NumberFormat('es-MX',{style:'currency',currency:o.moneda,maximumFractionDigits:2}).format(Number(o.precio))+' '+o.moneda;
