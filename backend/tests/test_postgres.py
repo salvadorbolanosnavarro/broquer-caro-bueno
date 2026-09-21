@@ -16,7 +16,7 @@ def tenants(monkeypatch):
     monkeypatch.setenv('DATABASE_WORKER_URL',DSN or '');monkeypatch.setenv('DATABASE_URL',DSN or '');configuracion.cache_clear()
     ids=[uuid4(),uuid4()];orgs=[]
     with psycopg.connect(DSN) as db:
-        for uid in ids:db.execute('INSERT INTO auth.users(id,email,email_confirmed_at) VALUES(%s,%s,now())',(uid,str(uid)+'@example.test'))
+        for uid in ids:db.execute('INSERT INTO auth.users(id,email,email_confirmed_at) VALUES(%s,%s,now())',(uid,str(uid)+'@example.com'))
     for uid in ids:
         with transaccion(uid) as db:
             orgs.append(db.execute("SELECT broquer.crear_cuenta_personal('Demo','Prueba','+524431234567') AS org").fetchone()['org'])
@@ -100,7 +100,7 @@ def test_pipeline_historial_y_conflicto(tenants):
     from broquer.modulos.oportunidades import inicializar,crear,mover,actividad,Nueva,Movimiento
     from broquer.modulos.contactos import crear as crear_contacto,Contacto
     ids,orgs=tenants;ctx=Contexto(ids[0],orgs[0],'owner')
-    c=crear_contacto(Contacto(nombre='Prueba',email='pipeline@example.test'),ctx)
+    c=crear_contacto(Contacto(nombre='Prueba',email='pipeline@example.com'),ctx)
     etapas=inicializar(ctx)['etapas']
     assert len(inicializar(ctx)['etapas'])==len(etapas)
     o=crear(Nueva(contacto_id=c['id'],etapa_id=etapas[0]['id'],titulo='Casa'),ctx)

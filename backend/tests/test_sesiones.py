@@ -72,7 +72,7 @@ def test_storage_ajeno_no_llama_proveedor(monkeypatch):
     assert e.value.estado==404;cliente.assert_not_called()
 def test_rate_limit_sin_correo_en_claro(monkeypatch):
     db=Mock();db.execute.return_value.fetchone.return_value={'usadas':1};monkeypatch.setattr(limites,'transaccion',tx_falso(db));monkeypatch.setattr(limites,'configuracion',lambda:NS(rate_limit_secret='s'*40))
-    limites.limitar('acceso:correo:privado@example.test',10);parametros=db.execute.call_args[0][1];assert len(parametros[0])==64 and 'privado' not in str(parametros)
+    limites.limitar('acceso:correo:privado@example.com',10);parametros=db.execute.call_args[0][1];assert len(parametros[0])==64 and 'privado' not in str(parametros)
 
 def test_costo_ia_decimal():
     from decimal import Decimal
