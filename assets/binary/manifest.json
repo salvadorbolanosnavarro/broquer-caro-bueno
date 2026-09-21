@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "public/casa-demo.webp",
+      "source": "assets/binary/public/casa-demo.webp.base64",
+      "sha256": "7869bb7b701ce9eb5427af3863114aabd0507c1da55c768f2c3df3f1f3e93ca4",
+      "bytes": 223002
+    },
+    {
+      "path": "public/fonts/manrope-400.ttf",
+      "source": "assets/binary/public/fonts/manrope-400.ttf.base64",
+      "sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
+      "bytes": 94972
+    },
+    {
+      "path": "public/fonts/manrope-500.ttf",
+      "source": "assets/binary/public/fonts/manrope-500.ttf.base64",
+      "sha256": "f433e5d333be1128d8ec8a28b8aadd0314d10e14e4105406076666bc830fc15d",
+      "bytes": 95060
+    },
+    {
+      "path": "public/fonts/manrope-600.ttf",
+      "source": "assets/binary/public/fonts/manrope-600.ttf.base64",
+      "sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce",
+      "bytes": 95096
+    },
+    {
+      "path": "public/fonts/manrope-700.ttf",
+      "source": "assets/binary/public/fonts/manrope-700.ttf.base64",
+      "sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8",
+      "bytes": 94928
+    },
+    {
+      "path": "public/fonts/manrope-800.ttf",
+      "source": "assets/binary/public/fonts/manrope-800.ttf.base64",
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950",
+      "bytes": 95688
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png",
+      "source": "assets/binary/ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png.base64",
+      "sha256": "425339f17b5d3b1f6423d77ee6c6c4a8beeca9faa8cb4507cbd3adc484db84b2",
+      "bytes": 31753
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732.png",
+      "source": "assets/binary/ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732.png.base64",
+      "sha256": "30b8e9cf68254ad21e8299fe0d502d662a512464538f1ad8de4d373244e29809",
+      "bytes": 28287
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732-1.png",
+      "source": "assets/binary/ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732-1.png.base64",
+      "sha256": "30b8e9cf68254ad21e8299fe0d502d662a512464538f1ad8de4d373244e29809",
+      "bytes": 28287
+    },
+    {
+      "path": "ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732-2.png",
+      "source": "assets/binary/ios/App/App/Assets.xcassets/Splash.imageset/splash-2732x2732-2.png.base64",
+      "sha256": "30b8e9cf68254ad21e8299fe0d502d662a512464538f1ad8de4d373244e29809",
+      "bytes": 28287
+    }
+  ]
+}

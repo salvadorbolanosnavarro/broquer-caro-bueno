@@ -1,0 +1,110 @@
+[
+  {
+    "clave": "campanas",
+    "nombre": "Campañas",
+    "grupo": "Marketing",
+    "descripcion": "Anuncios que abren conversaciones.",
+    "icono": "Megaphone",
+    "ruta_demo": "/campanas",
+    "estado_demo": "demo"
+  },
+  {
+    "clave": "agenda",
+    "nombre": "Agenda",
+    "grupo": "CRM",
+    "descripcion": "Tus visitas y pendientes, en orden.",
+    "icono": "CalendarDays",
+    "ruta_demo": "/agenda",
+    "estado_demo": "demo"
+  },
+  {
+    "clave": "inmuebles",
+    "nombre": "Inmuebles",
+    "grupo": "CRM",
+    "descripcion": "Cada propiedad, en un solo lugar.",
+    "icono": "House",
+    "ruta_demo": "/inmuebles",
+    "estado_demo": "demo"
+  },
+  {
+    "clave": "clientes",
+    "nombre": "Clientes",
+    "grupo": "CRM",
+    "descripcion": "Del primer contacto al cierre.",
+    "icono": "Users",
+    "ruta_demo": "/clientes",
+    "estado_demo": "demo"
+  },
+  {
+    "clave": "contratos",
+    "nombre": "Contratos",
+    "grupo": "Documentos",
+    "descripcion": "Prepara el siguiente acuerdo.",
+    "icono": "FileText",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "fotografia",
+    "nombre": "Fotografía",
+    "grupo": "Marketing",
+    "descripcion": "Muestra el potencial de cada espacio.",
+    "icono": "Aperture",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "directorio",
+    "nombre": "Directorio",
+    "grupo": "CRM",
+    "descripcion": "Personas y relaciones de tu negocio.",
+    "icono": "ContactRound",
+    "ruta_demo": "/directorio",
+    "estado_demo": "demo"
+  },
+  {
+    "clave": "whatsapp",
+    "nombre": "WhatsApp",
+    "grupo": "Seguimiento",
+    "descripcion": "Conversaciones y seguimiento.",
+    "icono": "MessageCircle",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "estimacion",
+    "nombre": "Estimación de valor",
+    "grupo": "Herramientas",
+    "descripcion": "Comparables para orientar una decisión.",
+    "icono": "ChartNoAxesCombined",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "isr",
+    "nombre": "ISR",
+    "grupo": "Herramientas",
+    "descripcion": "Estimaciones fiscales documentadas.",
+    "icono": "Calculator",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "firmas",
+    "nombre": "Firma electrónica",
+    "grupo": "Documentos",
+    "descripcion": "Acuerdos con evidencia y trazabilidad.",
+    "icono": "PenLine",
+    "ruta_demo": null,
+    "estado_demo": "proximamente"
+  },
+  {
+    "clave": "finanzas",
+    "nombre": "Finanzas",
+    "grupo": "Herramientas",
+    "descripcion": "Ingresos, gastos y comisiones.",
+    "icono": "Wallet",
+    "ruta_demo": "/finanzas",
+    "estado_demo": "demo"
+  }
+]

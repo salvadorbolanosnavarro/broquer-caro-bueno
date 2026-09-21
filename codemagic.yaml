@@ -1,0 +1,56 @@
+workflows:
+  ios-simulador:
+    name: Broquer · simulador iOS
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      node: 22
+      xcode: latest
+    scripts:
+      - name: Instalar dependencias
+        script: |
+          npm install -g pnpm@11.25.0
+          pnpm install --frozen-lockfile
+      - name: Compilar interfaz compartida
+        script: pnpm mobile:sync
+      - name: Validar tipos
+        script: pnpm exec tsc --noEmit
+      - name: Compilar para simulador sin certificados
+        script: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/simulator CODE_SIGNING_ALLOWED=NO build
+    artifacts:
+      - build/simulator/Build/Products/Debug-iphonesimulator/*.app
+      - /tmp/xcodebuild_logs/*.log
+  ios-firmada:
+    name: Broquer · archivo iOS firmado
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      node: 22
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: app.broquer.mobile
+    scripts:
+      - name: Instalar dependencias
+        script: |
+          npm install -g pnpm@11.25.0
+          pnpm install --frozen-lockfile
+      - name: Compilar y sincronizar
+        script: pnpm mobile:sync
+      - name: Aplicar firma configurada en Codemagic
+        script: xcode-project use-profiles
+      - name: Numerar compilación
+        script: |
+          cd ios/App
+          agvtool new-version -all "$BUILD_NUMBER"
+      - name: Archivar
+        script: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath build/Broquer.xcarchive archive
+      - name: Exportar IPA
+        script: |
+          xcodebuild -exportArchive -archivePath build/Broquer.xcarchive -exportPath build/ipa -exportOptionsPlist "$HOME/export_options.plist"
+    artifacts:
+      - build/ipa/*.ipa
+      - build/Broquer.xcarchive/dSYMs/*.dSYM
+      - /tmp/xcodebuild_logs/*.log

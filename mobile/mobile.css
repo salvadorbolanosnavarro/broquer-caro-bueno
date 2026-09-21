@@ -1,0 +1,4 @@
+body { padding-top: env(safe-area-inset-top); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); -webkit-tap-highlight-color: transparent; }
+.navegacion-movil { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+
+main { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
